@@ -50,4 +50,5 @@ console.log(isTrue);
  eg: name, _val, $value, name1 (valid names for variable)
      12value, my name (invalid)
  * Reserved words cannot be variable names.
+     
 */
