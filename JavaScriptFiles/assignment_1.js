@@ -28,3 +28,31 @@ else if(marks>=0 && marks<=49)
     console.log("Grade: F");
 else
     console.log("Enter valid marks next time!");
+
+/*
+
+ Q3. Print all even numbers from 0 to 100
+
+*/
+
+for(let i=0;i<=100;i++){
+    if(i%2==0)
+        console.log(i);
+}
+
+/*
+
+ Q4. Create a game where you start with any random game number. Ask the 
+ user to keep gussing the game number until the user enters correct value.
+
+*/
+
+let gameNum = 25;
+let userNum = prompt("Guess the game number: ");
+while(gameNum!=userNum){
+    if(gameNum<userNum)
+        userNum = prompt("The game number is lesser than "+userNum+".\nGuess again: ");
+    else if(gameNum>userNum)
+        userNum = prompt("The game number is greater than "+userNum+".\nGuess again: ");
+}
+promp("Congratulations, you entered the right number.");
