@@ -1,0 +1,105 @@
+What is DOM?
+************
+
+When a web page is loaded, the browser creates a "Document Object Model" (DOM) of the page.
+used for dynamic manipulation.
+
+
+Window
+|
+------------->Document
+                 |
+                html
+                 |
+                 ------------>head
+                 |             |
+                 |             -------------->meta, title, link, etc..
+                 |
+                 ------------>body
+                               |
+                               -------------->div, script
+                                               |
+                                               ------------->img, h1, p, dic, etc..
+
+
+Accessing elements using DOM:
+*****************************
+
+* Selecting with id:
+
+    document.getElementById("myId");
+
+* Selecting with class:
+
+    document.getElementsByClassName("myClass");
+
+* Selecting with tag:
+
+    document.getElementsByTagName("p");
+
+* Selecting with querySelector:
+
+    document.querySelector("#myId / .myClass / tag");
+    returns first occurance.
+
+    document.querySelectorAll("#myId / .myClass / tag");
+    returns a NodeList.
+
+DOM Manipulation: (most used)
+***************** 
+* tagName: returns tag for element nodes
+
+    eg: 
+        let firstElement = document.querySelector("p");
+        console.log(firstElement.tagName); --> logs tag name.
+
+* innerText: returns the text content of the element and all its children.
+  innerHTML: returns the HTML Tags of the element and all its children.
+
+    eg:
+        <body>
+            <div>
+                <img>
+                <h1></h1>
+                <p></p>
+                <div></div>
+            </div>
+            <script></script>
+        </body>
+
+        child nodes of body: div, script
+        child nodes of div: img, h1, div
+
+        hirearchy: parent --> child, sibling (same level) --> decendent
+
+        * firstChild
+        * lastChild
+        * children
+        
+        let firstElement = document.querySelector("p");
+        console.log(firstElement.innerText); --> return string of innerTexts seperated with \n.
+        console.log(firstElement.innerHTML); --> return string of innerHTML tags seperated with \n.
+
+        using innetText & innerHTML we can manipulate the content.
+        
+        eg:
+            let headding = document.querySelector("h1");
+            headding.innerText = "new Headding";
+            headding.innerHTML = "<i>new Headding<i>";
+
+* textContent: returns textual content even for hidden elements.
+
+    eg:
+        <body>
+            <h1 style="visibility: hidden">old Headding</h1>  <!--text is hidden in window-->
+        </body>
+
+        let headding = document.querySelector("h1");
+        console.log(headding.textContent); --> can access hidden text.
+
+
+
+
+Dom Tree:
+
+* text nodes, comment nodes, and element nodes.

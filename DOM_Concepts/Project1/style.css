@@ -1,4 +1,4 @@
-h1{
+h2{
     color: blue;
     background-color: yellow;
 }
@@ -7,7 +7,15 @@ body{
     background-color: orange;
 }
 
-button{
-    background-color: black;
-    color: white;
+.box{
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: aquamarine;
+}
+.box:hover{
+    background-color: azure;
+    font-size: 18px;
 }
